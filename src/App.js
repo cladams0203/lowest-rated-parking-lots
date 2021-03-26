@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import { useReducer } from "react";
+import { initialState, parkingReducer } from "./state/parkingReducer";
+import Search from "./views/Search/Search";
+import Home from "./views/Home/Home";
+import "./App.scss";
 
 function App() {
+  const [state, dispatch] = useReducer(parkingReducer, initialState);
+  const { businesses } = state;
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Lowest Rated Parking App</h1>
+      <Search dispatch={dispatch} />
+      <Home businesses={businesses} />
     </div>
   );
 }
