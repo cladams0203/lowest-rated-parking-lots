@@ -1,7 +1,6 @@
 import "./Card.scss";
 import noParking from "../../assets/noParking.jpeg";
 export default function Card({ biz }) {
-  console.log(biz);
   const { score, image_url, location, name, rating, review_count, url } = biz;
 
   return (
