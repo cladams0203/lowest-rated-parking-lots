@@ -15,8 +15,9 @@ REACT_APP_BEARER=<Yelp Api Key>
 ```
 
 3. Visit https://cors-anywhere.herokuapp.com/corsdemo to enable the proxy to eliminate cors issues while running in the localhost development environment.
-4. Run the "npm start" script described below for development.
-5. You can also run the "npm test" script to run the unit tests.
+4. Run the "npm install" command to install all of the dependancies.
+5. Run the "npm start" script described below for development.
+6. You can also run the "npm test" script to run the unit tests.
 
 ## Available Scripts
 
