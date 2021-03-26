@@ -10,6 +10,7 @@ test("Input and Button Render", () => {
   expect(input).toBeInTheDocument();
   expect(button).toBeInTheDocument();
 });
+
 test("Verify input takes in value", async () => {
   const { getByLabelText } = screen;
   render(<Search />);
@@ -17,4 +18,18 @@ test("Verify input takes in value", async () => {
   expect(input).toBeInTheDocument();
   await userEvent.type(input, "Tampa");
   expect(input).toHaveValue("Tampa");
+});
+
+test("Verify button calls submit function", async () => {
+  const { getByLabelText, getByRole } = screen;
+  const mockDispatch = jest.fn();
+  render(<Search dispatch={mockDispatch} />);
+  const input = getByLabelText(/enter location/i);
+  const button = getByRole("button");
+  expect(input).toBeInTheDocument();
+  expect(button).toBeInTheDocument();
+  await userEvent.type(input, "Tampa");
+  expect(input).toHaveValue("Tampa");
+  await userEvent.click(button);
+  expect(mockDispatch).toHaveBeenCalled();
 });
