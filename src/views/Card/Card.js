@@ -4,7 +4,7 @@ export default function Card({ biz }) {
   const { score, image_url, location, name, rating, review_count, url } = biz;
 
   return (
-    <div className="card-container">
+    <div data-testid="card" className="card-container">
       <div className="image">
         <img src={image_url ? image_url : noParking} alt={name} />
       </div>
