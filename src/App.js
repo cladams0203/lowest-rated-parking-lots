@@ -8,7 +8,7 @@ import "./App.scss";
 function App() {
   const [state, dispatch] = useReducer(parkingReducer, initialState);
   const { businesses } = state;
-  console.log(state);
+
   return (
     <div className="App">
       <Header dispatch={dispatch} />
