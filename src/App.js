@@ -1,6 +1,6 @@
 import { useReducer } from "react";
 import { initialState, parkingReducer } from "./state/parkingReducer";
-import Search from "./views/Search/Search";
+import Header from "./views/Header/Header";
 import Home from "./views/Home/Home";
 import "./App.scss";
 
@@ -9,8 +9,7 @@ function App() {
   const { businesses } = state;
   return (
     <div className="App">
-      <h1>Lowest Rated Parking App</h1>
-      <Search dispatch={dispatch} />
+      <Header dispatch={dispatch} />
       <Home businesses={businesses} />
     </div>
   );
